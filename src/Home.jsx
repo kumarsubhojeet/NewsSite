@@ -12,8 +12,9 @@ const Home = ()=>{
         getdata();
     }, [])
    
+    const Key = ("30d6271c41a148ebbc8ae887904ea0f5");
     const getdata = async ()=>{
-        const res = await axios.get(`*https://newsapi.org/v2/top-headlines?country=in&apiKey=30d6271c41a148ebbc8ae887904ea0f5`);
+        const res = await axios.get(`https://newsapi.org/v2/top-headlines?country=in&apiKey=${Key}`);
         console.log(res);
         CardUpdate(res.data.articles)
     }
