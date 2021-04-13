@@ -14,9 +14,7 @@ const Home = ()=>{
    
     const Key = ("30d6271c41a148ebbc8ae887904ea0f5");
     const getdata = async ()=>{
-        const res = await axios.get(`https://newsapi.org/v2/top-headlines?country=in&apiKey=${Key}`);
-        res.header("Access-Control-Allow-Origin", "*");
-        console.log(res);
+        const res = await axios.post(`https://newsapi.org/v2/top-headlines?country=in&apiKey=${Key}`);
         CardUpdate(res.data.articles)
     }
     return(
